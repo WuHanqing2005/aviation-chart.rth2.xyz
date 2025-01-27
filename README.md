@@ -1,7 +1,7 @@
 # aviation-chart.rth2.xyz
 This is an aviation chart inquiry website by Wu Hanqing.
 
-雾岛听风航图查询网站：aviation-chart.rth5.com
+雾岛听风航图查询网站：aviation-chart.rth2.xyz
 
 新鲜出炉航图网站，航图慢速更新中！欢迎前来访问体验并提出修改意见！
 
