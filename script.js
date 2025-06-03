@@ -4000,5 +4000,35 @@ function isMobileDevice() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
+// 主题切换功能
+function switchTheme() {
+    const body = document.body;
+    const currentTheme = body.getAttribute('data-theme');
+    const themeSwitch = document.getElementById('theme-switch');
+
+    if (currentTheme === 'dark') {
+        body.removeAttribute('data-theme');
+        themeSwitch.textContent = '☀️';
+        localStorage.setItem('theme', 'light');
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        themeSwitch.textContent = '🌙';
+        localStorage.setItem('theme', 'dark');
+    }
+}
+
+// 页面加载时检查并应用保存的主题
+document.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme');
+    const themeSwitch = document.getElementById('theme-switch');
+
+    if (savedTheme === 'dark') {
+        document.body.setAttribute('data-theme', 'dark');
+        themeSwitch.textContent = '🌙';
+    } else {
+        themeSwitch.textContent = '☀️';
+    }
+});
+
 // 初始化列表
 generateAirportList('');

@@ -1,114 +1,178 @@
 :root {
-    --background-color: #121212; /* 深色背景 */
-    --text-color: #ffffff; /* 文字颜色 */
-    --border-color: #444444; /* 边框颜色 */
-    --hover-color: #242424; /* 鼠标悬停颜色 */
-    --highlight-color: #00ff99; /* 高亮颜色 */
+    /* 浅色主题变量 */
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --panel-bg: #f5f5f5;
+    --highlight-color: #007bff;
+    --border-color: #dddddd;
+    --button-bg: #e9ecef;
+    --button-hover: #dee2e6;
+}
+
+[data-theme="dark"] {
+    /* 深色主题变量 */
+    --bg-color: #1a1a1a;
+    --text-color: #ffffff;
+    --panel-bg: #242424;
+    --highlight-color: #4dabf7;
+    --border-color: #404040;
+    --button-bg: #2d2d2d;
+    --button-hover: #3d3d3d;
 }
 
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    height: 120vh;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    display: flex;
-    flex-direction: row; /* 默认左右布局 */
-}
-
-#left-panel {
-    width: 350px;
-    padding: 20px;
-    border-right: 1px solid var(--border-color);
-    overflow-y: auto;
-    height: 120vh;
-}
-
-#right-panel {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    height: 120vh;
-}
-
-#pdf-viewer {
-    flex: 1;
-    border: none;
-    height: 100vh;
-}
-
-input[type="text"] {
-    width: 280px;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: var(--hover-color);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-}
-
-ul {
-    list-style-type: none;
     padding: 0;
-}
-
-li {
-    padding: 8px;
-    cursor: pointer;
-    border: 1px solid var(--border-color);
-    margin-bottom: 5px;
-    background-color: var(--hover-color);
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
     color: var(--text-color);
-}
+    transition: background-color 0.3s, color 0.3s;
 
-li:hover {
-    background-color: var(--background-color);
-}
+    /* 左侧面板样式 */
 
-.sub-list {
-    list-style-type: none;
-    padding-left: 20px;
-    display: none; /* 默认不显示子列表 */
-}
+    #left-panel {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 300px;
+        height: 100vh;
+        background-color: var(--panel-bg);
+        padding: 20px;
+        box-sizing: border-box;
+        border-right: 1px solid var(--border-color);
+        overflow-y: auto;
 
-.info-text {
-    font-size: 14px; /* 调整字号为14px */
-    color: var(--text-color);
-    margin: 0;
-    padding: 5px;
+        h1 {
+            margin: 0 0 20px 0;
+            color: var(--text-color);
+        }
+
+        h2 {
+            margin: 15px 0;
+            color: var(--text-color);
+        }
+
+        #search-box {
+            width: 100%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        #airport-list {
+            list-style: none;
+            padding: 0;
+
+            li {
+                padding: 8px;
+                margin: 5px 0;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: var(--button-hover);
+                }
+            }
+        }
+    }
+
+    /* 右侧面板样式 */
+
+    #right-panel {
+        margin-left: 300px;
+        padding: 20px;
+        height: 100vh;
+        box-sizing: border-box;
+
+        h2 {
+            margin: 0;
+            padding: 10px;
+            background: var(--panel-bg);
+            text-align: center;
+        }
+
+        .info-text {
+            color: var(--text-color);
+            margin: 10px 0;
+        }
+
+        #pdf-path {
+            color: var(--text-color);
+            margin: 10px 0;
+        }
+
+        #pdf-viewer {
+            border: none;
+            background-color: var(--bg-color);
+            width: 100%;
+            height: calc(100vh - 200px);
+        }
+    }
+
+    /* 按钮样式 */
+
+    button {
+        padding: 8px 16px;
+        margin: 5px;
+        border: none;
+        border-radius: 4px;
+        background-color: var(--button-bg);
+        color: var(--text-color);
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: var(--button-hover);
+        }
+    }
+
+    /* 链接样式 */
+
+    a {
+        color: var(--highlight-color);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 /* 响应式设计 */
 @media (max-width: 768px) {
     body {
-        flex-direction: column; /* 在小屏幕上改为上下布局 */
-        height: 219vh; /* 确保body高度为屏幕高度的219% */
-    }
+        flex-direction: column;
+        height: 219vh;
 
-    #left-panel {
-        width: 90%; /* 搜索框和机场名称栏占据90% */
-        height: 100vh; /* 机场列表高度为屏幕高度的100% */
-        margin: auto; /* 自动居中 */
-        padding: 10px;
-        overflow-y: auto; /* 确保内容溢出时可以滚动 */
-    }
+        #left-panel {
+            width: 90%;
+            height: 100vh;
+            margin: auto;
+            padding: 10px;
+            overflow-y: auto;
+            position: relative;
+            left: auto;
+            top: auto;
+        }
 
-    input[type="text"] {
-        width: 88%; /* 搜索框宽度调整为85% */
-        margin: auto; /* 自动居中 */
-    }
+        #right-panel {
+            width: 100%;
+            height: 150vh;
+            margin: auto;
+            display: block;
+            margin-left: 0;
+            padding: 10px;
 
-    #right-panel {
-        width: 100%; /* 移动端显示宽度100% */
-        height: 150vh; /* 航图显示区域高度为屏幕高度的150% */
-        margin: auto; /* 自动居中 */
-        display: block; /* 显示PDF区域 */
-        /* overflow-y: auto; /* 确保内容溢出时可以滚动 */
-    }
-
-    #pdf-viewer {
-        width: 100%; /* 移动端显示宽度100% */
-        height: 99vh; /* 确保PDF查看器高度为99% */
-        margin: auto; /* 自动居中 */
-        overflow-y: auto; /* 确保内容溢出时可以滚动 */
+            #pdf-viewer {
+                width: 100%;
+                height: 99vh;
+                margin: auto;
+                overflow-y: auto;
+            }
+        }
     }
 }
