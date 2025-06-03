@@ -7,38 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- 左侧机场列表区 -->
-    <div id="left-panel">
-        <h1>雾岛听风航图查询网站</h1>
-        <h2>航图搜索</h2>
-        <input type="text" id="search-box" placeholder="搜索机场名称或四字码" oninput="filterList()">
-        <button id="language-switch" onclick="switchLanguage()">中文/English</button>
-        <span id="current-language" style="color: var(--highlight-color); margin-left: 10px;">English</span>
-        <h2>航图列表</h2>
-        <ul id="airport-list">
-            <!-- 动态生成的机场列表 -->
-        </ul>
-    </div>
+<!-- 左侧机场列表区 -->
+<div id="left-panel">
+    <h1>雾岛听风航图查询网站</h1>
+    <h2>航图搜索</h2>
+    <input type="text" id="search-box" placeholder="搜索机场名称或四字码" oninput="filterList()">
+    <button id="language-switch" onclick="switchLanguage()">中文/English</button>
+    <span id="current-language" style="color: var(--highlight-color); margin-left: 10px;">English</span>
+    <h2>航图列表</h2>
+    <ul id="airport-list">
+        <!-- 动态生成的机场列表 -->
+    </ul>
+</div>
 
-    <!-- 右侧航图显示区 -->
-    <div id="right-panel">
-        <!-- 大标题 -->
-        <h2 style="margin: 0; padding: 10px; background: #242424; text-align: center;">航图显示区</h2>
+<!-- 右侧航图显示区 -->
+<div id="right-panel">
+    <!-- 大标题 -->
+    <h2 style="margin: 0; padding: 10px; background: #242424; text-align: center;">航图显示区</h2>
 
-        <!-- 介绍文本 -->
-        <p class="info-text">航图版本为 中国民用航空局CAAC 202501 或更早的版本 部分非中国大陆航图为Jeppesen航图 航图慢速更新中……</p>
-        <p class="info-text">2025-02-24 16:45 更新日志：新增机场：全部公开的202503版本的中国AIP航图</p>
-        <p class="info-text">欢迎联系网站作者 微信：whq20050121 邮箱：m19528873640@outlook.com</p>
-        <p class="info-text">欢迎访问我的个人网站：<a href="http://wuhanqing2005{$rthSuffix}" target="_blank">http://wuhanqing2005{$rthSuffix}</a></p>
-        
-        <!-- 显示打开的PDF文件路径 -->
-        <p id="pdf-path" class="info-text"></p>
-        <!-- 调试专用，平常没事别打开 -->
+    <!-- 介绍文本 -->
+    <p class="info-text">航图版本为 中国民用航空局CAAC 202501 或更早的版本 部分非中国大陆航图为Jeppesen航图
+        航图慢速更新中……</p>
+    <p class="info-text">2025-02-24 16:45 更新日志：新增机场：全部公开的202503版本的中国AIP航图</p>
+    <p class="info-text">欢迎联系网站作者 微信：whq20050121 邮箱：m19528873640@outlook.com</p>
+    <p class="info-text">欢迎访问我的个人网站：<a href="http://wuhanqing2005{$rthSuffix}" target="_blank">http://wuhanqing2005{$rthSuffix}</a>
+    </p>
 
-        <!-- PDF显示区 -->
-        <iframe id="pdf-viewer" src="" width="100%" height="100%"></iframe>
-    </div>
+    <!-- 显示打开的PDF文件路径 -->
+    <p id="pdf-path" class="info-text"></p>
+    <!-- 调试专用，平常没事别打开 -->
 
-    <script src="script.js"></script>
+    <!-- PDF显示区 -->
+    <iframe id="pdf-viewer" src="" width="100%" height="100%"></iframe>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

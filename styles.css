@@ -1,114 +1,114 @@
 :root {
-            --background-color: #121212; /* 深色背景 */
-            --text-color: #ffffff; /* 文字颜色 */
-            --border-color: #444444; /* 边框颜色 */
-            --hover-color: #242424; /* 鼠标悬停颜色 */
-            --highlight-color: #00ff99; /* 高亮颜色 */
-        }
+    --background-color: #121212; /* 深色背景 */
+    --text-color: #ffffff; /* 文字颜色 */
+    --border-color: #444444; /* 边框颜色 */
+    --hover-color: #242424; /* 鼠标悬停颜色 */
+    --highlight-color: #00ff99; /* 高亮颜色 */
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            height: 120vh;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            display: flex;
-            flex-direction: row; /* 默认左右布局 */
-        }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    height: 120vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row; /* 默认左右布局 */
+}
 
-        #left-panel {
-            width: 350px;
-            padding: 20px;
-            border-right: 1px solid var(--border-color);
-            overflow-y: auto;
-            height: 120vh;
-        }
+#left-panel {
+    width: 350px;
+    padding: 20px;
+    border-right: 1px solid var(--border-color);
+    overflow-y: auto;
+    height: 120vh;
+}
 
-        #right-panel {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            height: 120vh;
-        }
+#right-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 120vh;
+}
 
-        #pdf-viewer {
-            flex: 1;
-            border: none;
-            height: 100vh;
-        }
+#pdf-viewer {
+    flex: 1;
+    border: none;
+    height: 100vh;
+}
 
-        input[type="text"] {
-            width: 280px;
-            padding: 10px;
-            margin-bottom: 20px;
-            background-color: var(--hover-color);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-        }
+input[type="text"] {
+    width: 280px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: var(--hover-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-        li {
-            padding: 8px;
-            cursor: pointer;
-            border: 1px solid var(--border-color);
-            margin-bottom: 5px;
-            background-color: var(--hover-color);
-            color: var(--text-color);
-        }
+li {
+    padding: 8px;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    margin-bottom: 5px;
+    background-color: var(--hover-color);
+    color: var(--text-color);
+}
 
-        li:hover {
-            background-color: var(--background-color);
-        }
+li:hover {
+    background-color: var(--background-color);
+}
 
-        .sub-list {
-            list-style-type: none;
-            padding-left: 20px;
-            display: none; /* 默认不显示子列表 */
-        }
+.sub-list {
+    list-style-type: none;
+    padding-left: 20px;
+    display: none; /* 默认不显示子列表 */
+}
 
-        .info-text {
-            font-size: 14px; /* 调整字号为14px */
-            color: var(--text-color);
-            margin: 0;
-            padding: 5px;
-        }
+.info-text {
+    font-size: 14px; /* 调整字号为14px */
+    color: var(--text-color);
+    margin: 0;
+    padding: 5px;
+}
 
-        /* 响应式设计 */
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column; /* 在小屏幕上改为上下布局 */
-                height: 219vh; /* 确保body高度为屏幕高度的219% */
-            }
+/* 响应式设计 */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column; /* 在小屏幕上改为上下布局 */
+        height: 219vh; /* 确保body高度为屏幕高度的219% */
+    }
 
-            #left-panel {
-                width: 90%; /* 搜索框和机场名称栏占据90% */
-                height: 100vh; /* 机场列表高度为屏幕高度的100% */
-                margin: auto; /* 自动居中 */
-                padding: 10px;
-                overflow-y: auto; /* 确保内容溢出时可以滚动 */
-            }
+    #left-panel {
+        width: 90%; /* 搜索框和机场名称栏占据90% */
+        height: 100vh; /* 机场列表高度为屏幕高度的100% */
+        margin: auto; /* 自动居中 */
+        padding: 10px;
+        overflow-y: auto; /* 确保内容溢出时可以滚动 */
+    }
 
-            input[type="text"] {
-                width: 88%; /* 搜索框宽度调整为85% */
-                margin: auto; /* 自动居中 */
-            }
+    input[type="text"] {
+        width: 88%; /* 搜索框宽度调整为85% */
+        margin: auto; /* 自动居中 */
+    }
 
-            #right-panel {
-                width: 100%; /* 移动端显示宽度100% */
-                height: 150vh; /* 航图显示区域高度为屏幕高度的150% */
-                margin: auto; /* 自动居中 */
-                display: block; /* 显示PDF区域 */
-                /* overflow-y: auto; /* 确保内容溢出时可以滚动 */
-            }
+    #right-panel {
+        width: 100%; /* 移动端显示宽度100% */
+        height: 150vh; /* 航图显示区域高度为屏幕高度的150% */
+        margin: auto; /* 自动居中 */
+        display: block; /* 显示PDF区域 */
+        /* overflow-y: auto; /* 确保内容溢出时可以滚动 */
+    }
 
-            #pdf-viewer {
-                width: 100%; /* 移动端显示宽度100% */
-                height: 99vh; /* 确保PDF查看器高度为99% */
-                margin: auto; /* 自动居中 */
-                overflow-y: auto; /* 确保内容溢出时可以滚动 */
-            }
-        }
+    #pdf-viewer {
+        width: 100%; /* 移动端显示宽度100% */
+        height: 99vh; /* 确保PDF查看器高度为99% */
+        margin: auto; /* 自动居中 */
+        overflow-y: auto; /* 确保内容溢出时可以滚动 */
+    }
+}
