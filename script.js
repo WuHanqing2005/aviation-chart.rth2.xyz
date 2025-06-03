@@ -2,9 +2,6 @@ const airportList = document.getElementById('airport-list');
 const pdfViewer = document.getElementById('pdf-viewer');
 const languageSwitch = document.getElementById('language-switch');
 
-// 全局状态
-let currentLanguage = 'zh'; // 默认语言为中文
-
 // 机场数据
 const airports =
     [
@@ -3708,7 +3705,7 @@ let isChinese = false; // 默认显示英文
 // 中英文切换按钮
 function switchLanguage() {
     isChinese = !isChinese;
-    currentLanguage.textContent = isChinese ? '中文' : 'English';
+    languageSwitch.textContent = isChinese ? '中文' : 'English';
     generateAirportList(document.getElementById('search-box').value.toLowerCase());
 }
 
@@ -3922,7 +3919,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         themeSwitch.textContent = '☀️';
     }
-    currentLanguage.textContent = isChinese ? '中文' : 'English';
+    languageSwitch.textContent = isChinese ? '中文' : 'English';
 
 
 });
