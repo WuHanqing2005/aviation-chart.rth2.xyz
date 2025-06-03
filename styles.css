@@ -63,12 +63,23 @@ body {
             background-color: var(--panel-bg);
             width: 100%;
             box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            h1, h2 {
+            h1, h2, h3 {
                 margin: 0;
                 color: var(--text-color);
                 word-wrap: break-word;
                 overflow-wrap: break-word;
+            }
+
+            .control-buttons {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                margin: 0;
+                flex-wrap: nowrap;
             }
         }
 
@@ -243,6 +254,11 @@ body {
         transition: all 0.3s;
         font-size: 14px;
         white-space: nowrap;
+        height: 35px;
+        line-height: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             background-color: var(--button-hover);

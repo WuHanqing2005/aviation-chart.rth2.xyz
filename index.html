@@ -14,11 +14,8 @@
         <div class="card-body">
             <div class="search-section">
                 <div class="search-box-wrapper">
-                    <input type="text" id="search-box" placeholder="搜索机场名称或四字码" oninput="filterList()">
-                </div>
-                <div class="control-buttons">
-                    <button id="language-switch" onclick="switchLanguage()">中文/English</button>
-                    <button id="theme-switch" onclick="switchTheme()">🌙/☀️</button>
+                    <input type="text" id="search-box" placeholder="请输入机场名称/四字码进行搜索"
+                           oninput="filterList()">
                 </div>
             </div>
             <div class="airport-list-section">
@@ -32,7 +29,13 @@
 
     <!-- 右侧航图显示区 -->
     <div class="card right-panel">
-        <h3 class="card-header">航图显示区</h3>
+        <div class="card-header">
+            <h3>航图显示区</h3>
+            <div class="control-buttons">
+                <button id="language-switch" onclick="switchLanguage()">中文/English</button>
+                <button id="theme-switch" onclick="switchTheme()">🌙/☀️</button>
+            </div>
+        </div>
         <div class="card-body">
             <div id="website-label" class="info-card">
                 <p class="info-text">
@@ -46,7 +49,7 @@
                 </p>
                 <p class="info-text">
                     <span>欢迎访问我的个人网站：</span>
-                    <a href="https://wuhanqing2005.rth2.xyz" target="_blank">https://wuhanqing2005.rth2.xyz/</a>
+                    <a href="https://wuhanqing2005.rth2.xyz" target="_blank">https://wuhanqing2005.rth2.xyz</a>
                 </p>
             </div>
 
