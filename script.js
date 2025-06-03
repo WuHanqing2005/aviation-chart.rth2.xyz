@@ -1,6 +1,6 @@
 const airportList = document.getElementById('airport-list');
 const pdfViewer = document.getElementById('pdf-viewer');
-const currentLanguage = document.getElementById('current-language');
+let currentLanguage = document.getElementById('language-switch')
 
 // 机场数据
 const airports =
@@ -4028,6 +4028,7 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
         themeSwitch.textContent = '☀️';
     }
+    currentLanguage.textContent = isChinese ? '中文' : 'English';
 });
 
 // 初始化列表
