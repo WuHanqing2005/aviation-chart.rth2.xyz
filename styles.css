@@ -1,5 +1,32 @@
 :root {
-    /* 浅色主题变量 */
+    /* 主题配置 */
+    --themes: {
+        light: {
+        --bg-color: rgba(240, 242, 245, 0.75);
+        --text-color: #333333;
+        --panel-bg: rgba(255, 255, 255, 0.75);
+        --highlight-color: #007bff;
+        --border-color: #e1e4e8;
+        --button-bg: #e9ecef;
+        --button-hover: #dee2e6;
+        --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        --card-radius: 6px;
+    },
+    dark: {
+        --bg-color: rgba(26, 26, 26, 0.75);
+        --text-color: #ffffff;
+        --panel-bg: rgba(36, 36, 36, 0.75);
+        --highlight-color: #4dabf7;
+        --border-color: #404040;
+        --button-bg: #2d2d2d;
+        --button-hover: #3d3d3d;
+        --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+    }
+    }
+}
+
+/* 默认使用亮色主题 */
+:root {
     --bg-color: rgba(240, 242, 245, 0.75);
     --text-color: #333333;
     --panel-bg: rgba(255, 255, 255, 0.75);
@@ -12,7 +39,6 @@
 }
 
 [data-theme="dark"] {
-    /* 深色主题变量 */
     --bg-color: rgba(26, 26, 26, 0.75);
     --text-color: #ffffff;
     --panel-bg: rgba(36, 36, 36, 0.75);
@@ -322,4 +348,39 @@ body::before {
         background: url('img/portrait-bg.png') center center/cover no-repeat;
         filter: blur(12px) brightness(0.7);
     }
+}
+
+/* 添加下拉列表样式 */
+#theme-switch {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--button-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 14px;
+    height: 35px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 30px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    background-size: 16px;
+}
+
+#theme-switch:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+#theme-switch:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--highlight-color);
 }

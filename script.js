@@ -3893,32 +3893,18 @@ function isMobileDevice() {
 
 // 主题切换功能
 function switchTheme() {
-    const body = document.body;
-    const currentTheme = body.getAttribute('data-theme');
     const themeSwitch = document.getElementById('theme-switch');
-
-    if (currentTheme === 'dark') {
-        body.removeAttribute('data-theme');
-        themeSwitch.textContent = '☀️';
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        themeSwitch.textContent = '🌙';
-        localStorage.setItem('theme', 'dark');
-    }
+    const selectedTheme = themeSwitch.value;
+    document.documentElement.setAttribute('data-theme', selectedTheme);
+    localStorage.setItem('theme', selectedTheme);
 }
 
 // 页面加载时检查并应用保存的主题
 document.addEventListener('DOMContentLoaded', function () {
-    const savedTheme = localStorage.getItem('theme');
+    const savedTheme = localStorage.getItem('theme') || 'light';
     const themeSwitch = document.getElementById('theme-switch');
-
-    if (savedTheme === 'dark') {
-        document.body.setAttribute('data-theme', 'dark');
-        themeSwitch.textContent = '🌙';
-    } else {
-        themeSwitch.textContent = '☀️';
-    }
+    themeSwitch.value = savedTheme;
+    document.documentElement.setAttribute('data-theme', savedTheme);
     languageSwitch.textContent = isChinese ? '中文' : 'English';
 
 

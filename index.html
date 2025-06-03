@@ -33,7 +33,10 @@
             <h3>航图显示区</h3>
             <div class="control-buttons">
                 <button id="language-switch" onclick="switchLanguage()">中文/English</button>
-                <button id="theme-switch" onclick="switchTheme()">🌙/☀️</button>
+                <select id="theme-switch" onchange="switchTheme()">
+                    <option value="light">亮色主题</option>
+                    <option value="dark">深色主题</option>
+                </select>
             </div>
         </div>
         <div class="card-body">
