@@ -269,7 +269,7 @@ body {
 
         .container {
             flex-direction: column;
-            height: auto;
+            height: 100vh;
         }
 
         .left-panel {
@@ -278,8 +278,10 @@ body {
         }
 
         .right-panel {
+            overflow: visible;
+
             .pdf-section {
-                height: 500px;
+                height: 90vh;
             }
         }
     }

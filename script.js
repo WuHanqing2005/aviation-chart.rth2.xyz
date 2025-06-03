@@ -1,6 +1,9 @@
 const airportList = document.getElementById('airport-list');
 const pdfViewer = document.getElementById('pdf-viewer');
-let currentLanguage = document.getElementById('language-switch')
+const languageSwitch = document.getElementById('language-switch');
+
+// 全局状态
+let currentLanguage = 'zh'; // 默认语言为中文
 
 // 机场数据
 const airports =
@@ -1390,85 +1393,6 @@ const airports =
             ]
         },
         {
-            "name": "ZHHH-武汉天河",
-            "folder": "ZHHH-武汉天河",
-            "pages": [
-                "ZHHH-0-AD.pdf",
-                "ZHHH-1A-ADC.pdf",
-                "ZHHH-1B-ADC.pdf",
-                "ZHHH-2-APDC.pdf",
-                "ZHHH-4A-AOC RWY04-22.pdf",
-                "ZHHH-4B-AOC RWY05L-23R.pdf",
-                "ZHHH-4C-AOC RWY05R-23L.pdf",
-                "ZHHH-5-PATC RWY05L.pdf",
-                "ZHHH-6A-FDA.pdf",
-                "ZHHH-6B-ATCSMAC.pdf",
-                "ZHHH-7A-SID RWY04.pdf",
-                "ZHHH-7B-SID RWY05L-05R.pdf",
-                "ZHHH-7C-SID RWY22.pdf",
-                "ZHHH-7D-SID RWY23R-23L.pdf",
-                "ZHHH-7E1-SID RNP RWY04-05L-05R-22-23R-23L(XSH).pdf",
-                "ZHHH-7E2-SID RNP RWY04-05L-05R-23R-23L(XSH).pdf",
-                "ZHHH-7E3-SID RNP RWY04-05L-05R(XSH).pdf",
-                "ZHHH-7F1-SID RNP RWY05L-05R-22-23R-23L(BIVIP).pdf",
-                "ZHHH-7F2-SID RNP RWY04-05L-05R-22-23R-23L(BIVIP).pdf",
-                "ZHHH-7G1-SID RNP RWY04-05L-05R-22-23R-23L(BENBI).pdf",
-                "ZHHH-7G2-SID RNP RWY23R-23L(BENBI).pdf",
-                "ZHHH-7H1-SID RNP RWY04-05L-05R-22-23R-23L(OLMIB).pdf",
-                "ZHHH-7H2-SID RNP RWY04-05L-05R-22-23R-23L(OLMIB).pdf",
-                "ZHHH-7J-SID RNP RWY04-05L-05R-22-23R-23L(GUGAM).pdf",
-                "ZHHH-9A-STAR RWY04-05L-05R.pdf",
-                "ZHHH-9B-STAR RWY22-23R-23L.pdf",
-                "ZHHH-9C1-STAR RNP RWY04-05L-05R(XSH).pdf",
-                "ZHHH-9C2-STAR RNP RWY22-23R-23L(XSH).pdf",
-                "ZHHH-9D1-STAR RNP RWY04-05L-05R(PONUD).pdf",
-                "ZHHH-9D2-STAR RNP RWY22-23R-23L(PONUD).pdf",
-                "ZHHH-9E1-STAR RNP RWY04-05L-05R(WTM).pdf",
-                "ZHHH-9E2-STAR RNP RWY22-23R-23L(WTM).pdf",
-                "ZHHH-9F1-STAR RNP RWY04-05L-05R(UPMAT).pdf",
-                "ZHHH-9F2-STAR RNP RWY22-23R-23L(UPMAT).pdf",
-                "ZHHH-9G-STAR RNP RWY04-05L-05R.pdf",
-                "ZHHH-9H-STAR RNP RWY22-23R-23L.pdf",
-                "ZHHH-9Y01-WAYPOINT LIST.pdf",
-                "ZHHH-9Y02-WAYPOINT LIST.pdf",
-                "ZHHH-9Z01-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z02-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z03-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z04-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z05-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z06-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z07-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z08-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z09-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z10-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z11-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z12-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z13-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z14-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z15-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z16-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z17-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z18-DATABASE CODING TABLE.pdf",
-                "ZHHH-9Z19-DATABASE CODING TABLE.pdf",
-                "ZHHH-10A-IAC ILS-DME y RWY04.pdf",
-                "ZHHH-10B-IAC CAT-I-II ILS-DME y RWY05L.pdf",
-                "ZHHH-10C-IAC ILS-DME y RWY05R.pdf",
-                "ZHHH-10D-IAC ILS-DME y RWY22.pdf",
-                "ZHHH-10E-IAC ILS-DME y RWY23L.pdf",
-                "ZHHH-10F-IAC ILS-DME y RWY23R.pdf",
-                "ZHHH-10G-IAC CAT-I-II ILS-DME w RWY05L.pdf",
-                "ZHHH-10H-IAC ILS-DME w RWY05R.pdf",
-                "ZHHH-20A-IAC RNP ILS-DME z RWY04.pdf",
-                "ZHHH-20B-IAC RNP CAT-I-II ILS-DME z RWY05L.pdf",
-                "ZHHH-20C-IAC RNP ILS-DME z RWY05R.pdf",
-                "ZHHH-20D-IAC RNP ILS-DME z RWY22.pdf",
-                "ZHHH-20E-IAC RNP ILS-DME z RWY23L.pdf",
-                "ZHHH-20F-IAC RNP ILS-DME z RWY23R.pdf",
-                "ZHHH-20G-IAC RNP CAT-I-II ILS-DME x RWY05L.pdf",
-                "ZHHH-20H-IAC RNP ILS-DME x RWY05R.pdf"
-            ]
-        },
-        {
             "name": "ZHYC-宜昌三峡",
             "folder": "ZHYC-宜昌三峡",
             "pages": [
@@ -2828,35 +2752,6 @@ const airports =
                 "ZSWZ-10D-IAC VOR-DME RWY21.pdf",
                 "ZSWZ-20A-IAC RNP ILS-DME z RWY03.pdf",
                 "ZSWZ-20B-IAC RNP ILS-DME z RWY21.pdf"
-            ]
-        },
-        {
-            "name": "ZSXZ-徐州观音",
-            "folder": "ZSXZ-徐州观音",
-            "pages": [
-                "ZSXZ-0-AD.pdf",
-                "ZSXZ-1-ADC.pdf",
-                "ZSXZ-2-APDC.pdf",
-                "ZSXZ-4-AOC.pdf",
-                "ZSXZ-7A-SID RWY09.pdf",
-                "ZSXZ-7B-SID RWY27.pdf",
-                "ZSXZ-7C-SID RNP RWY09.pdf",
-                "ZSXZ-7D-SID RNP RWY27.pdf",
-                "ZSXZ-9A-STAR RWY09.pdf",
-                "ZSXZ-9B-STAR RWY27.pdf",
-                "ZSXZ-9C-STAR RNP RWY09.pdf",
-                "ZSXZ-9D-STAR RNP RWY27.pdf",
-                "ZSXZ-9Y01-WAYPOINT LIST.pdf",
-                "ZSXZ-9Z01-DATABASE CODING TABLE.pdf",
-                "ZSXZ-9Z02-DATABASE CODING TABLE.pdf",
-                "ZSXZ-9Z03-DATABASE CODING TABLE.pdf",
-                "ZSXZ-9Z04-DATABASE CODING TABLE.pdf",
-                "ZSXZ-10A-IAC ILS-DME y RWY09.pdf",
-                "ZSXZ-10B-IAC ILS-DME y RWY27.pdf",
-                "ZSXZ-10C-IAC VOR-DME RWY09.pdf",
-                "ZSXZ-10D-IAC VOR-DME RWY27.pdf",
-                "ZSXZ-20A-IAC RNP ILS-DME z RWY09.pdf",
-                "ZSXZ-20B-IAC RNP ILS-DME z RWY27.pdf"
             ]
         },
         {
