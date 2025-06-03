@@ -3901,13 +3901,9 @@ function translatePageName(pageName) {
     return pageName;
 }
 
-
-// 初始化列表
-generateAirportList('');
-
 // 显示PDF的函数
 function showPDF(pdfFile) {
-    if (determineDevice() == 'Android') {
+    if (determineDevice() === 'Android') {
         var currentUrl = window.location.href;
         var pdfUrl = currentUrl.substring(0, currentUrl.lastIndexOf('/')) + '/' + pdfFile;
         var pdfFileEncoded = encodeURIComponent(pdfFile);
@@ -3918,6 +3914,9 @@ function showPDF(pdfFile) {
 
     // 更新页面上的文本内容以显示PDF文件的路径
     document.getElementById('pdf-path').textContent = `当前打开的PDF文件路径: ${pdfFile}`;
+    document.getElementById('pdf-file-label').style.display = 'block'
+    document.getElementById('pdf-file-content').style.display = 'block'
+    document.getElementById('website-label').style.display = 'none'
 
     // 判断是否为移动端设备，如果是移动端，则点击PDF名称后，自动滚动到页面最底部
     if (isMobileDevice()) {
@@ -4029,6 +4028,8 @@ document.addEventListener('DOMContentLoaded', function () {
         themeSwitch.textContent = '☀️';
     }
     currentLanguage.textContent = isChinese ? '中文' : 'English';
+
+
 });
 
 // 初始化列表

@@ -194,30 +194,25 @@ body {
         flex: 1;
         min-width: 0; /* 防止flex子项溢出 */
 
-        .info-section {
-            margin-bottom: 20px;
+        .info-card {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
             width: 100%;
+            box-sizing: border-box;
 
-            .info-card {
-                background-color: var(--bg-color);
-                border-radius: 8px;
-                padding: 15px;
-                margin-bottom: 15px;
-                width: 100%;
-                box-sizing: border-box;
-
-                .info-text {
-                    margin: 0;
-                    color: var(--text-color);
-                    line-height: 1.5;
-                    word-wrap: break-word;
-                    overflow-wrap: break-word;
-                }
+            .info-text {
+                margin: 0;
+                color: var(--text-color);
+                line-height: 1.5;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
         }
 
         .pdf-section {
-            height: calc(100% - 300px);
+            height: calc(100% - 70px);
             background-color: var(--bg-color);
             border-radius: 8px;
             overflow: hidden;
@@ -229,6 +224,10 @@ body {
                 border: none;
                 background-color: var(--bg-color);
             }
+        }
+
+        #pdf-file-label, #pdf-file-content {
+            display: none;
         }
     }
 

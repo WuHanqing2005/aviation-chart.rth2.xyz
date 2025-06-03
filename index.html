@@ -22,7 +22,7 @@
                 </div>
             </div>
             <div class="airport-list-section">
-                <h2>航图列表</h2>
+                <h3>航图列表</h3>
                 <ul id="airport-list">
                     <!-- 动态生成的机场列表 -->
                 </ul>
@@ -32,29 +32,28 @@
 
     <!-- 右侧航图显示区 -->
     <div class="card right-panel">
-        <div class="card-header">
-            <h2>航图显示区</h2>
-        </div>
+        <h3 class="card-header">航图显示区</h3>
         <div class="card-body">
-            <div class="info-section">
-                <div class="info-card">
-                    <p class="info-text">航图版本为 中国民用航空局CAAC 202501 或更早的版本 部分非中国大陆航图为Jeppesen航图
-                        航图慢速更新中……</p>
-                </div>
-                <div class="info-card">
-                    <p class="info-text">2025-02-24 16:45 更新日志：新增机场：全部公开的202503版本的中国AIP航图</p>
-                </div>
-                <div class="info-card">
-                    <p class="info-text">欢迎联系网站作者 微信：whq20050121 邮箱：m19528873640@outlook.com</p>
-                </div>
-                <div class="info-card">
-                    <p class="info-text">欢迎访问我的个人网站：<a href="http://wuhanqing2005{$rthSuffix}"
-                                                                 target="_blank">http://wuhanqing2005{$rthSuffix}</a>
-                    </p>
-                </div>
+            <div id="website-label" class="info-card">
+                <p class="info-text">
+                    航图版本为 中国民用航空局CAAC 202501 或更早的版本 部分非中国大陆航图为Jeppesen航图 航图慢速更新中……
+                </p>
+                <p class="info-text">
+                    2025-02-24 16:45 更新日志：新增机场：全部公开的202503版本的中国AIP航图
+                </p>
+                <p class="info-text">
+                    欢迎联系网站作者 微信：whq20050121 邮箱：m19528873640@outlook.com
+                </p>
+                <p class="info-text">
+                    <span>欢迎访问我的个人网站：</span>
+                    <a href="https://wuhanqing2005.rth2.xyz" target="_blank">https://wuhanqing2005.rth2.xyz/</a>
+                </p>
+            </div>
+
+            <div id="pdf-file-label" class="info-card">
                 <p id="pdf-path" class="info-text"></p>
             </div>
-            <div class="pdf-section">
+            <div id="pdf-file-content" class="pdf-section">
                 <iframe id="pdf-viewer" src="" width="100%" height="100%"></iframe>
             </div>
         </div>
