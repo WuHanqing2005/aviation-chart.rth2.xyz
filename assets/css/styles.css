@@ -314,7 +314,7 @@ body::before {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: url('img/landscape-bg.png') center center/cover no-repeat;
+    background: url('/assets/img/landscape-bg.png') center center/cover no-repeat;
     filter: blur(6px) brightness(0.7);
     pointer-events: none;
     transition: background-image 0.3s;
@@ -345,7 +345,7 @@ body::before {
     }
 
     body::before {
-        background: url('img/portrait-bg.png') center center/cover no-repeat;
+        background: url('/assets/img/portrait-bg.png') center center/cover no-repeat;
         filter: blur(12px) brightness(0.7);
     }
 }
