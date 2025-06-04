@@ -345,7 +345,7 @@ body::before {
     }
 
     body::before {
-        background: url('../img/potrait-bg.png') center center/cover no-repeat;
+        background: url('../img/portrait-bg.png') center center/cover no-repeat;
         filter: blur(12px) brightness(0.7);
     }
 }
