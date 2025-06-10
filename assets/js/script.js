@@ -241,6 +241,31 @@ function switchTheme() {
     const selectedTheme = themeSwitch.value;
     document.documentElement.setAttribute('data-theme', selectedTheme);
     localStorage.setItem('theme', selectedTheme);
+
+    // 提示主题切换成功
+    if (isChinese) {
+        Swal.fire('成功', `已切换到${selectedTheme}主题`, 'success');
+    } else {
+        let themeName = '';
+        switch (selectedTheme) {
+            case 'light':
+                themeName = 'Light';
+                break;
+            case 'dark':
+                themeName = 'Dark';
+                break;
+            case 'bilibili':
+                themeName = 'Bilibili';
+                break;
+            case 'win11':
+                themeName = 'Win11';
+                break;
+            case 'coolapk':
+                themeName = 'Coolapk';
+                break;
+        }
+        Swal.fire('Success', `Switched to ${themeName} theme`, 'success');
+    }
 }
 
 // 页面加载时检查并应用保存的主题
@@ -251,6 +276,36 @@ document.addEventListener('DOMContentLoaded', function () {
     document.documentElement.setAttribute('data-theme', savedTheme);
     languageSwitch.textContent = isChinese ? '中文' : 'English';
 
-
+    // 初始化机场列表
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/js/files.json', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                try {
+                    airports = JSON.parse(xhr.responseText);
+                    generateAirportList('');
+                    if (isChinese) {
+                        Swal.fire('成功', '机场列表已加载!', 'success');
+                    } else {
+                        Swal.fire('Success', 'Airport list loaded successfully.', 'success');
+                    }
+                } catch (e) {
+                    if (isChinese) {
+                        Swal.fire('错误', '加载机场数据时发生错误!', 'error');
+                    } else {
+                        Swal.fire('Error', 'An error occurred while loading airport data.', 'error');
+                    }
+                }
+            } else {
+                if (isChinese) {
+                    Swal.fire('错误', '无法加载机场列表，请稍后再试!', 'error');
+                } else {
+                    Swal.fire('Error', 'Unable to load airport list, please try again later.', 'error');
+                }
+            }
+        }
+    };
+    xhr.send();
 });
 
