@@ -1,27 +1,56 @@
 :root {
-    /* 主题配置 */
     --themes: {
         light: {
-        --bg-color: rgba(240, 242, 245, 0.75);
-        --text-color: #333333;
-        --panel-bg: rgba(255, 255, 255, 0.75);
-        --highlight-color: #007bff;
-        --border-color: #e1e4e8;
-        --button-bg: #e9ecef;
-        --button-hover: #dee2e6;
-        --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-        --card-radius: 6px;
-    },
-    dark: {
-        --bg-color: rgba(26, 26, 26, 0.75);
-        --text-color: #ffffff;
-        --panel-bg: rgba(36, 36, 36, 0.75);
-        --highlight-color: #4dabf7;
-        --border-color: #404040;
-        --button-bg: #2d2d2d;
-        --button-hover: #3d3d3d;
-        --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
-    }
+            --bg-color: rgba(240, 242, 245, 0.75);
+            --text-color: #333333;
+            --panel-bg: rgba(255, 255, 255, 0.75);
+            --highlight-color: #007bff;
+            --border-color: #e1e4e8;
+            --button-bg: #e9ecef;
+            --button-hover: #dee2e6;
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+            --card-radius: 6px;
+        },
+        dark: {
+            --bg-color: rgba(26, 26, 26, 0.75);
+            --text-color: #ffffff;
+            --panel-bg: rgba(36, 36, 36, 0.75);
+            --highlight-color: #4dabf7;
+            --border-color: #404040;
+            --button-bg: #2d2d2d;
+            --button-hover: #3d3d3d;
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+        },
+        bilibili: {
+            --bg-color: rgba(255, 255, 255, 0.75);
+            --text-color: #333333;
+            --panel-bg: rgba(255, 255, 255, 0.9);
+            --highlight-color: #ff6b9d; /* Bilibili粉 */
+            --border-color: #e8e8e8;
+            --button-bg: #f8f8f8;
+            --button-hover: #e0e0e0;
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        },
+        win11: {
+            --bg-color: rgba(242, 243, 245, 0.75);
+            --text-color: #333333;
+            --panel-bg: rgba(255, 255, 255, 0.9);
+            --highlight-color: #0078d7; /* Win11蓝 */
+            --border-color: #c8c8c8;
+            --button-bg: #e8e8e8;
+            --button-hover: #d8d8d8;
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        },
+        coolapk: {
+            --bg-color: rgba(249, 252, 249, 0.75);
+            --text-color: #333333;
+            --panel-bg: rgba(255, 255, 255, 0.9);
+            --highlight-color: #5bb72a; /* 酷安绿 */
+            --border-color: #e8e8e8;
+            --button-bg: #f8f8f8;
+            --button-hover: #e0e0e0;
+            --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
     }
 }
 
@@ -38,6 +67,7 @@
     --card-radius: 6px;
 }
 
+/* 深色主题 */
 [data-theme="dark"] {
     --bg-color: rgba(26, 26, 26, 0.75);
     --text-color: #ffffff;
@@ -47,6 +77,96 @@
     --button-bg: #2d2d2d;
     --button-hover: #3d3d3d;
     --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Bilibili主题 */
+[data-theme="bilibili"] {
+    --bg-color: #FFB5CE;
+    --text-color: #333333;
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --highlight-color: #ff6b9d;
+    --border-color: #ff6b9d;
+    --button-bg: #ff6b9d;
+    --button-hover: #ff5280;
+    --card-shadow: 0 2px 12px rgba(255, 107, 157, 0.2);
+    --card-radius: 6px;
+}
+
+/* Bilibili 主题下的标题栏 */
+[data-theme="bilibili"] .left-panel .card-header,
+[data-theme="bilibili"] .right-panel .card-header {
+    background-color: rgba(255, 107, 157, 0.2); /* 标题栏背景色 - 浅粉色 */
+    color: #333333; /* 标题文字颜色 - 深灰色 */
+}
+
+/* Bilibili 主题下的机场列表背景 */
+[data-theme="bilibili"] .left-panel .card-body {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Bilibili 主题下的航图显示区背景 */
+[data-theme="bilibili"] .right-panel .card-body {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Win11主题 */
+[data-theme="win11"] {
+    --bg-color: #7FBCEB;
+    --text-color: #333333;
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --highlight-color: #0078d7;
+    --border-color: #0078d7;
+    --button-bg: #0078d7;
+    --button-hover: #005a9e;
+    --card-shadow: 0 2px 12px rgba(0, 120, 215, 0.2);
+    --card-radius: 6px;
+}
+
+/* Win11 主题下的标题栏 */
+[data-theme="win11"] .left-panel .card-header,
+[data-theme="win11"] .right-panel .card-header {
+    background-color: rgba(0, 120, 215, 0.2); /* 标题栏背景色 - 浅蓝色 */
+    color: #333333; /* 标题文字颜色 - 深灰色 */
+}
+
+/* Win11 主题下的机场列表背景 */
+[data-theme="win11"] .left-panel .card-body {
+    background-color: rgba(242, 243, 245, 0.9);
+}
+
+/* Win11 主题下的航图显示区背景 */
+[data-theme="win11"] .right-panel .card-body {
+    background-color: rgba(242, 243, 245, 0.9);
+}
+
+/* 酷安主题 */
+[data-theme="coolapk"] {
+    --bg-color: #adda95;
+    --text-color: #333333;
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --highlight-color: #5bb72a;
+    --border-color: #5bb72a;
+    --button-bg: #5bb72a;
+    --button-hover: #4a8f22;
+    --card-shadow: 0 2px 12px rgba(91, 183, 42, 0.2);
+    --card-radius: 6px;
+}
+
+/* 酷安 主题下的标题栏 */
+[data-theme="coolapk"] .left-panel .card-header,
+[data-theme="coolapk"] .right-panel .card-header {
+    background-color: rgba(91, 183, 42, 0.2); /* 标题栏背景色 - 浅绿色 */
+    color: #333333; /* 标题文字颜色 - 深灰色 */
+}
+
+/* 酷安 主题下的机场列表背景 */
+[data-theme="coolapk"] .left-panel .card-body {
+    background-color: rgba(249, 252, 249, 0.9);
+}
+
+/* 酷安 主题下的航图显示区背景 */
+[data-theme="coolapk"] .right-panel .card-body {
+    background-color: rgba(249, 252, 249, 0.9);
 }
 
 body {
@@ -314,7 +434,7 @@ body::before {
     width: 100vw;
     height: 100vh;
     z-index: -1;
-    background: url('../img/landscape-bg.png') center center/cover no-repeat;
+    background: url('/assets/img/landscape-bg.png') center center/cover no-repeat;
     filter: blur(6px) brightness(0.7);
     pointer-events: none;
     transition: background-image 0.3s;
@@ -345,7 +465,7 @@ body::before {
     }
 
     body::before {
-        background: url('../img/portrait-bg.png') center center/cover no-repeat;
+        background: url('/assets/img/portrait-bg.png') center center/cover no-repeat;
         filter: blur(12px) brightness(0.7);
     }
 }
@@ -369,7 +489,7 @@ body::before {
     -webkit-appearance: none;
     -moz-appearance: none;
     padding-right: 30px;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg SVG namespace SVG namespace ' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 8px center;
     background-size: 16px;
