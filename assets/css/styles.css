@@ -506,7 +506,7 @@ body::before {
         }
 
         .left-panel {
-            max-height: 80vh; /* 左侧面板占屏高比例 */
+            max-height: 60vh; /* 左侧面板占屏高比例 */
             width: 100%;
             margin-bottom: 20px;
         }
