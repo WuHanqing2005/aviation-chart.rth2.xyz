@@ -2,7 +2,7 @@
 
 This is an aviation chart inquiry website by Wu Hanqing.
 
-雾岛听风航图查询网站：aviation-chart.rth2.xyz
+雾岛听风航图查询网站：https://aviation-chart.rth2.xyz
 
 新鲜出炉航图网站，航图慢速更新中！欢迎前来访问体验并提出修改意见！
 
@@ -12,7 +12,9 @@ This is an aviation chart inquiry website by Wu Hanqing.
 
 后续会继续更新更多国内机场以及国外机场，也欢迎大家提出机场航图需求，以便后续尽早上传更新！
 
-airport-chart.rth5.com 更新日志
+WEBSITE VERSION: 2025.06.10
+
+CHART VERSION: EAIP2025-07.V1.4_Web
 
 ————————————————————
 
@@ -89,3 +91,7 @@ airport-chart.rth5.com 更新日志
 2025-06-04 21:40
 
 新增机场：全部公开的202506版本的中国AIP航图 更新网页界面
+
+2025-06-10 17:00
+
+新增机场：全部公开的EAIP2025-07.V1.4_Web版本的中国AIP航图
