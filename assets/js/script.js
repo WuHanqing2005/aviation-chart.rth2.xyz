@@ -177,10 +177,10 @@ function generateAirportList(query) {
 
             const subList = document.createElement('ul');
             subList.classList.add('sub-list');
+            subList.style.display = 'none'; // 默认隐藏子列表
             airport.pages.forEach(page => {
                 const pageItem = document.createElement('li');
                 pageItem.textContent = isChinese ? translatePageName(page) : page;
-                // pageItem.onclick = () => showPDF(`Terminal/${airport.folder}/${page}`);
                 pageItem.onclick = () => showPDF(`https://wuhanqing.cn/Terminal/${airport.folder}/${page}`);
                 subList.appendChild(pageItem);
             });
@@ -188,7 +188,6 @@ function generateAirportList(query) {
         }
     });
 }
-
 
 // 点击机场名称时展开/折叠子页面
 function toggleSubList(target) {
@@ -203,6 +202,47 @@ function toggleSubList(target) {
         subList.style.display = 'block';
     }
 }
+
+// 页面加载时检查并应用保存的主题
+document.addEventListener('DOMContentLoaded', function () {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const themeSwitch = document.getElementById('theme-switch');
+    themeSwitch.value = savedTheme;
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    languageSwitch.textContent = isChinese ? '中文' : 'English';
+
+    // 初始化机场列表为折叠状态
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '/assets/js/files.json', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                try {
+                    airports = JSON.parse(xhr.responseText);
+                    generateAirportList(''); // 调用修改后的函数，初始化列表为折叠状态
+                    if (isChinese) {
+                        Swal.fire('成功', '机场列表已加载!', 'success');
+                    } else {
+                        Swal.fire('Success', 'Airport list loaded successfully.', 'success');
+                    }
+                } catch (e) {
+                    if (isChinese) {
+                        Swal.fire('错误', '加载机场数据时发生错误!', 'error');
+                    } else {
+                        Swal.fire('Error', 'An error occurred while loading airport data.', 'error');
+                    }
+                }
+            } else {
+                if (isChinese) {
+                    Swal.fire('错误', '无法加载机场列表，请稍后再试!', 'error');
+                } else {
+                    Swal.fire('Error', 'Unable to load airport list, please try again later.', 'error');
+                }
+            }
+        }
+    };
+    xhr.send();
+});
 
 // 搜索功能
 function filterList() {
@@ -263,49 +303,37 @@ function switchTheme() {
             case 'coolapk':
                 themeName = 'Coolapk';
                 break;
+            case 'gold':
+                themeName = 'gold';
+                break;
         }
         Swal.fire('Success', `Switched to ${themeName} theme`, 'success');
     }
 }
 
-// 页面加载时检查并应用保存的主题
+// 返回到主页的函数
+function resetToHomePage() {
+    // 重置机场列表为初始状态（折叠）
+    generateAirportList('');
+    // 隐藏PDF查看器和路径显示
+    document.getElementById('pdf-file-label').style.display = 'none';
+    document.getElementById('pdf-file-content').style.display = 'none';
+    // 显示网站标签信息
+    document.getElementById('website-label').style.display = 'block';
+    // 重置PDF查看器的源
+    pdfViewer.src = '';
+    // 提示用户已返回主页
+    if (isChinese) {
+        Swal.fire('成功', '已返回主页', 'success');
+    } else {
+        Swal.fire('Success', 'Returned to home page', 'success');
+    }
+}
+
+// 页面加载完成后，为标题添加点击事件
 document.addEventListener('DOMContentLoaded', function () {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    const themeSwitch = document.getElementById('theme-switch');
-    themeSwitch.value = savedTheme;
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    languageSwitch.textContent = isChinese ? '中文' : 'English';
+    // 其他初始化代码
 
-    // 初始化机场列表
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/assets/js/files.json', true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                try {
-                    airports = JSON.parse(xhr.responseText);
-                    generateAirportList('');
-                    if (isChinese) {
-                        Swal.fire('成功', '机场列表已加载!', 'success');
-                    } else {
-                        Swal.fire('Success', 'Airport list loaded successfully.', 'success');
-                    }
-                } catch (e) {
-                    if (isChinese) {
-                        Swal.fire('错误', '加载机场数据时发生错误!', 'error');
-                    } else {
-                        Swal.fire('Error', 'An error occurred while loading airport data.', 'error');
-                    }
-                }
-            } else {
-                if (isChinese) {
-                    Swal.fire('错误', '无法加载机场列表，请稍后再试!', 'error');
-                } else {
-                    Swal.fire('Error', 'Unable to load airport list, please try again later.', 'error');
-                }
-            }
-        }
-    };
-    xhr.send();
+    // 为标题添加点击事件
+    document.getElementById('title-header').addEventListener('click', resetToHomePage);
 });
-
