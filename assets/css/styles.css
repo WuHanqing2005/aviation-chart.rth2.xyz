@@ -169,6 +169,36 @@
     background-color: rgba(249, 252, 249, 0.9);
 }
 
+/* 金色主题 */
+[data-theme="gold"] {
+    --bg-color: #ffeb7f;
+    --text-color: #333333;
+    --panel-bg: rgba(255, 255, 255, 0.9);
+    --highlight-color: #ffd700;
+    --border-color: #ffd700;
+    --button-bg: #ffd700;
+    --button-hover: #e5c100;
+    --card-shadow: 0 2px 12px rgba(255, 215, 0, 0.2);
+    --card-radius: 6px;
+}
+
+/* 金色 主题下的标题栏 */
+[data-theme="gold"] .left-panel .card-header,
+[data-theme="gold"] .right-panel .card-header {
+    background-color: rgba(255, 215, 0, 0.2); /* 标题栏背景色 - 浅金色 */
+    color: #333333; /* 标题文字颜色 - 深灰色 */
+}
+
+/* 金色 主题下的机场列表背景 */
+[data-theme="gold"] .left-panel .card-body {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* 金色 主题下的航图显示区背景 */
+[data-theme="gold"] .right-panel .card-body {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 body {
     margin: 0;
     padding: 15px;
@@ -371,7 +401,7 @@ body {
         }
 
         .pdf-section {
-            height: calc(100% - 70px);
+            height: calc(100% - 150px); /* 调整PDF查看器的高度，为其他内容留出空间 */
             background-color: var(--bg-color);
             border-radius: 8px;
             overflow: hidden;
@@ -440,7 +470,32 @@ body::before {
     transition: background-image 0.3s;
 }
 
-/* 响应式设计 */
+
+/* 电脑端显示逻辑 */
+@media (min-width: 769px) {
+    .right-panel {
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 40px); /* 调整高度以适应视口 */
+    }
+
+    .right-panel .card-body {
+        flex: 1; /* 允许内容区域扩展 */
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-card {
+        margin-bottom: 15px; /* 添加适当的间距 */
+    }
+
+    .pdf-section {
+        flex: 1; /* 允许 PDF 区域扩展 */
+        min-height: 500px; /* 设置最小高度以确保在没有内容时也可见 */
+    }
+}
+
+/* 移动端显示逻辑 */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -451,6 +506,7 @@ body::before {
         }
 
         .left-panel {
+            max-height: 80vh; /* 左侧面板占屏高比例 */
             width: 100%;
             margin-bottom: 20px;
         }
