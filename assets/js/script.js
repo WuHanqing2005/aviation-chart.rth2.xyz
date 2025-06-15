@@ -337,3 +337,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // 为标题添加点击事件
     document.getElementById('title-header').addEventListener('click', resetToHomePage);
 });
+
+// 加载网页时，清空缓存
+window.onload = function() {
+    // 直接清空缓存
+    localStorage.clear();
+    sessionStorage.clear();
+    // 清空 Cookie
+    document.cookie = "";
+};
