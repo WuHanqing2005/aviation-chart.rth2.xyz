@@ -12,7 +12,7 @@ This is an aviation chart inquiry website by Wu Hanqing.
 
 后续会继续更新更多国内机场以及国外机场，也欢迎大家提出机场航图需求，以便后续尽早上传更新！
 
-WEBSITE VERSION: 2025.06.11
+WEBSITE VERSION: 2025.06.15
 
 CHART VERSION: EAIP2025-07.V1.4_Web
 
@@ -22,11 +22,11 @@ CHART VERSION: EAIP2025-07.V1.4_Web
 
 欢迎联系网站作者 微信：whq20050121 邮箱：m19528873640@outlook.com
 
-欢迎访问我的个人网站：http://wuhanqing2005.rth5.com
+欢迎访问我的个人网站：http://wuhanqing.rth2.xyz
 
 ————————————————————
 
-更新日志（自2025-01-22开始记载更新日志）
+更新日志
 
 2025-01-22 20:22
 
@@ -97,3 +97,7 @@ CHART VERSION: EAIP2025-07.V1.4_Web
 添加了返回主页的功能，点击“雾岛听风航图查询网站”标题，即可返回主页
 
 调整了一下网页布局
+
+2025-06-15 19:30
+
+新增机场：VHHH-香港
