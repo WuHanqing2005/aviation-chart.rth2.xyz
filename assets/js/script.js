@@ -5,7 +5,7 @@ let airports = [];
 
 document.addEventListener('DOMContentLoaded', function () {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/assets/js/files.json', true);
+    xhr.open('GET', './assets/js/files.json', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // 初始化机场列表为折叠状态
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', '/assets/js/files.json', true);
+    xhr.open('GET', './assets/js/files.json', true);
     xhr.onreadystatechange = function () {
         if (xhr.readyState === 4) {
             if (xhr.status === 200) {
