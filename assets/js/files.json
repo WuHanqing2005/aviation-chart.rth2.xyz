@@ -1664,12 +1664,15 @@
             "ZHES-7D-SID RNP RWY19.pdf",
             "ZHES-9A-STAR RWY01.pdf",
             "ZHES-9B-STAR RWY19.pdf",
-            "ZHES-9Y01-WAY POINT LIST.pdf",
+            "ZHES-9C-STAR RNP RWY01.pdf",
+            "ZHES-9Y01-WAYPOINT LIST.pdf",
             "ZHES-9Z01-DATABASE CODING TABLE.pdf",
             "ZHES-9Z02-DATABASE CODING TABLE.pdf",
-            "ZHES-10A-IAC ILS-DME RWY01.pdf",
-            "ZHES-10B-IAC VOR-DME RWY01.pdf",
-            "ZHES-10C-IAC VOR-DME RWY19.pdf"
+            "ZHES-9Z03-DATABASE CODING TABLE.pdf",
+            "ZHES-10A-IAC ILS-DME z RWY01.pdf",
+            "ZHES-10B-IAC RNP ILS-DME y RWY01.pdf",
+            "ZHES-10C-IAC VOR-DME RWY01.pdf",
+            "ZHES-10D-IAC VOR-DME RWY19.pdf"
         ]
     },
     {
@@ -3367,8 +3370,8 @@
             "ZUGY-5V-1-IAC VOR-DME RWY01L.pdf",
             "ZUGY-5V-2-IAC VOR-DME RWY19L.pdf",
             "ZUGY-5V-3-IAC VOR-DME RWY19R.pdf",
-            "ZUGY-6A-1-AOC.pdf",
-            "ZUGY-6A-2-AOC.pdf",
+            "ZUGY-6A-1-AOC RWY01R-19L.pdf",
+            "ZUGY-6A-2-AOC RWY01L-19R.pdf",
             "ZUGY-6D-1-PATC.pdf"
         ]
     },
@@ -3633,7 +3636,6 @@
             "ZWWW-2P-1-APDC.pdf",
             "ZWWW-2R-1-APDC.pdf",
             "ZWWW-2R-2-APDC.pdf",
-            "ZWWW-2R-3-机场地面活动图.pdf",
             "ZWWW-3P-1-SID RNAV RWY08L-R(UGPEL-VARMI).pdf",
             "ZWWW-3P-2-SID RNAV RWY08L-R(NIXER).pdf",
             "ZWWW-3P-3-SID RNAV RWY26L-R(UGPEL-VARMI).pdf",
