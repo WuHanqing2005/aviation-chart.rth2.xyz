@@ -8,21 +8,21 @@ This is an aviation chart inquiry website by Wu Hanqing.
 
 本网站是基于热铁盒网页托管，搭建的简易航图查询网站，网站搭建于2025年1月20日，旨在造福广大飞友，方便查询航图。
 
-现已更新全部公开的EAIP2025-07.V1.4_Web版本CAAC英文版机场航图，韩国大部分机场航图，以及东京羽田机场航图，
+现已更新全部公开的EAIP2025-09.V1.4_Web版本CAAC英文版机场航图，韩国大部分机场航图，以及东京羽田机场航图，
 
 后续会继续更新更多国内机场以及国外机场，也欢迎大家提出机场航图需求，以便后续尽早上传更新！
 
-WEBSITE VERSION: 2025.06.15
+WEBSITE VERSION: 2025.08.11
 
-CHART VERSION: EAIP2025-07.V1.4_Web
+CHART VERSION: EAIP2025-09.V1.4_Web
 
 ————————————————————
 
 本网页为基于热铁盒网页托管，由吴瀚庆、Sam Sam、_Chenbing (BG7MUZ)等人创建的一个简易的航图查询网站，创建于2025年1月20日。
 
-欢迎联系网站作者 微信：whq20050121 邮箱：m19528873640@outlook.com
+欢迎联系网站作者 微信：Daniel_Qinghan 邮箱：wuhanqing2005@gmail.com
 
-欢迎访问我的个人网站：http://wuhanqing.rth2.xyz
+欢迎访问我的个人网站：https://wuhanqing2005.github.io/
 
 ————————————————————
 
